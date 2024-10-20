@@ -1,78 +1,51 @@
-Real-Time Weather Monitoring System
-Table of Contents
-Features
-Technologies
-Getting Started
-Prerequisites
-Installation
-Configuration
-Running the Application
-API Endpoints
-Entities
-License
-Features
-Real-time Weather Data Retrieval: Continuously fetches weather data from the OpenWeatherMap API at configurable intervals.
-Daily Weather Summary: Calculates daily aggregates like average, maximum, and minimum temperatures, and dominant weather condition.
-Temperature Conversion: Converts temperature from Kelvin to Celsius or Fahrenheit based on user preferences.
-Alerting System: User-configurable thresholds for temperature and weather conditions trigger alerts.
-Persistent Storage: Saves daily summaries in a database for future analysis.
-Visualization: Display weather summaries, historical trends, and triggered alerts using graphs.
-Technologies
-Node.js: Backend framework
-Express.js: For API handling
-MongoDB: Database for storing weather summaries
-OpenWeatherMap API: For retrieving real-time weather data
-Chart.js / D3.js: For visualization of weather trends and alerts
-Getting Started
-Follow these instructions to set up the project locally and start monitoring weather data in real-time.
+# WeatherPulse
 
-Prerequisites
-Node.js (v12 or higher)
-npm
-MongoDB installed locally or accessible via cloud
-OpenWeatherMap API Key: Sign up here
-Installation
-Clone the repository:
+A real-time weather monitoring system built with Node.js, OpenWeatherMap API, MongoDB, and Chart.js. This application retrieves real-time weather data, processes it for daily rollups and aggregates, triggers alerts based on thresholds, and visualizes weather trends.
 
-bash
-Copy code
-git clone https://github.com/Jatingupta9120/WeatherWise
-cd weather-monitoring-system
-Install the dependencies:
+## Table of Contents
 
-bash
-Copy code
-npm install
-Configuration
-Create a .env file in the project root and set the following environment variables:
+- [Features](#features)
+- [Technologies](#technologies)
+- [Getting Started](#getting-started)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Running the Application](#running-the-application)
+- [API Endpoints](#api-endpoints)
+- [Entities](#entities)
+- [License](#license)
 
-bash
-Copy code
-API_KEY=<Your OpenWeatherMap API Key>
-DB_URI=<MongoDB connection string>
-INTERVAL=300  # Interval in seconds for data retrieval (default: 5 minutes)
-TEMP_UNIT=Celsius  # Set to 'Fahrenheit' for Fahrenheit
-ALERT_THRESHOLD_TEMP=35  # Temperature threshold for alerts (in Celsius)
-Running the Application
-To start the application, run:
+## Features
 
-bash
-Copy code
-npm start
-The application will now retrieve weather data at the specified interval, process it, and store daily summaries in MongoDB. Alerts will trigger based on defined thresholds.
+- **Real-time Data Retrieval**: Fetches weather data from the OpenWeatherMap API at configurable intervals (default: 5 minutes).
+- **Daily Rollups and Aggregates**: Calculates daily average, maximum, and minimum temperatures, and determines the dominant weather condition.
+- **Temperature Conversion**: Converts temperature values from Kelvin to Celsius or Fahrenheit based on user preferences.
+- **User-Defined Alerts**: Allows users to define thresholds for temperature and weather conditions.
+- **Triggered Alerts**: Triggers alerts when temperature or weather conditions exceed defined thresholds.
+- **Data Visualization**: Visualizes daily summaries and weather trends with charts.
+- **Persistent Data Storage**: Stores daily weather summaries in MongoDB for further analysis.
 
-API Endpoints
-GET /api/weather/summary: Retrieves the daily weather summaries.
-GET /api/weather/alerts: Fetches any triggered alerts.
-POST /api/weather/thresholds: Set user-defined thresholds for temperature or weather conditions.
-Entities
-Weather Summary:
-date: Date of the weather summary.
-avg_temp: Average temperature.
-max_temp: Maximum temperature.
-min_temp: Minimum temperature.
-dominant_condition: The most frequent weather condition for the day.
-Alert:
-alert_type: Type of alert (e.g., temperature, condition).
-trigger_value: Value that triggered the alert.
-timestamp: Time the alert was triggered.
+## Technologies
+
+- **Node.js**: Backend framework for server-side logic.
+- **Express.js**: Handles API requests and routing.
+- **MongoDB**: NoSQL database for storing weather summaries.
+- **OpenWeatherMap API**: Source of real-time weather data.
+- **Chart.js / D3.js**: Visualization libraries to display weather summaries and trends.
+
+## Getting Started
+
+### Prerequisites
+
+- **Node.js** (v14 or higher)
+- **npm** (Node Package Manager)
+- **MongoDB** (local or cloud instance)
+- **OpenWeatherMap API Key**: [Sign up for a free API key](https://home.openweathermap.org/users/sign_up)
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Jatingupta9120/WeatherWise.git
+   cd weatherpulse
