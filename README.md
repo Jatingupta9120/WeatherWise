@@ -36,7 +36,7 @@ Clone the repository:
 
 bash
 Copy code
-git clone https://github.com/your-repo/weather-monitoring-system.git
+git clone https://github.com/Jatingupta9120/WeatherWise
 cd weather-monitoring-system
 Install the dependencies:
 
